@@ -1,13 +1,69 @@
 # galtzo-os &nbsp; [![bluebuild build badge](https://github.com/pboling/galtzo-os/actions/workflows/build.yml/badge.svg)](https://github.com/pboling/galtzo-os/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+This image is based on `aurora-dx-hwe:latest`.  A new version / build is released daily.
 
-After setup, it is recommended you update this README to describe your custom image.
+The linux lineage of this spin therefore looks something like this:
+
+```mermaid
+mindmap
+  root((Linux))
+    Red Hat
+      Fedora CoreOS
+        Fedora Silverblue
+          Universal Blue
+            Bazzite
+            Bluefin
+              Aurora
+                Aurora-DX
+                  Aurora-DX-HWE
+                    Galtzo
+                  
+    Debian
+      Ubuntu
+    SLS
+      Slackware
+    Jurix
+      SuSE
+    Enoch
+      Gentoo
+    Arch
+```
+NOTE: `HWE` images are tailored for a few hardware platforms, including ASUS laptops.  They also differ from other aurora builds in that they use the bazzite kernel.  The `DX` means the "Developer Experience" flavor.
+
+If you are unfamiliar with Universal Blue Linux, or Atomic Fedora,
+start your journey at [universal-blue.org](https://universal-blue.org/), and download an image that suits you.
+
+If you want to jump right into making your own spin (the water is fine!)
+start with the [Blue Build Workshop](https://workshop.blue-build.org/),
+a web tool that will create a repo like this one and build your first image.
+
+Or see the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick manual setup instructions.
+
+This particular configuration layers the following onto `aurora-dx-hwe`:
+
+- NordVPN (also added to systemd) (config taken from [jlandahl/aurora](https://github.com/jlandahl/aurora))
+- 1Password
+- Ruby build dependencies (fedora specific)
+  - autoconf
+  - gcc
+  - gcc-c++ (necessary for Ruby < 3.1)
+  - rust
+  - patch
+  - make
+  - bzip2
+  - openssl-devel
+  - libyaml-devel
+  - libffi-devel
+  - zlib-ng-compat-devel
+  - readline-devel
+  - gdbm-devel
+  - ncurses-devel
+  - perl-FindBin # Because of OpenSSL!
 
 ## Installation
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+| ⚠️ **Warning**️ | [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion. |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
 
 To rebase an existing atomic Fedora installation to the latest build:
 
@@ -29,6 +85,18 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+
+## Update
+
+Once you have this image installed updating to the latest is a two step process if you want to do it manually.
+
+```bash
+ujust update
+systemctl reboot
+```
+
+Otherwise if you just reboot periodically updates will simply happen transparently in the background.
+Generally there won't be more than one build per day, so a daily reboot will keep your system fresh.
 
 ## ISO
 

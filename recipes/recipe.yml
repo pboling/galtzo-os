@@ -1,13 +1,13 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
+# image is published to ghcr.io/pboling/galtzo-os
 name: galtzo-os
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: Aurora DX (HWE) with NordVPN, 1Password, and other tweaks
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 41 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/aurora-dx-hwe
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -20,14 +20,43 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - nordvpn.repo
+      - 1password.repo
+    optfix:
+      - 1Password
     install:
       - micro
       - starship
+      # Necessary to install Ruby
+      # See: https://github.com/rbenv/ruby-build/wiki#fedora
+      - autoconf
+      - gcc
+      - gcc-c++
+      - rust
+      - patch
+      - make
+      - bzip2
+      - openssl-devel
+      - libyaml-devel
+      - libffi-devel
+      - zlib-ng-compat-devel
+      - readline-devel
+      - gdbm-devel
+      - ncurses-devel
+      - perl-FindBin # Because of OpenSSL!
+      # Necessary for Quality of Life
+      - nordvpn
+      - 1password
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: systemd
+    system:
+      enabled:
+        - nordvpnd
 
   - type: default-flatpaks
     configurations:
