@@ -44,6 +44,8 @@ modules:
       - gdbm-devel
       - ncurses-devel
       - perl-FindBin # Because of OpenSSL!
+      # Necessary for JRuby & dynamodb-local
+      - java-25-openjdk-devel
       # Necessary for Quality of Life
       - nordvpn
       - 1password
