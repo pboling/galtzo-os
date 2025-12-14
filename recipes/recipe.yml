@@ -39,7 +39,6 @@ modules:
       - openssl-devel
       - libyaml-devel
       - libffi-devel
-      - zlib-ng-compat-devel
       - readline-devel
       - gdbm-devel
       - ncurses-devel
