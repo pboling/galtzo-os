@@ -49,6 +49,10 @@ modules:
       - nordvpn
       - 1password
 
+  - type: script
+    scripts:
+      - fix-zlib-symlink.sh
+
   - type: systemd
     system:
       enabled:
