@@ -11,3 +11,4 @@ if [ -L /usr/lib64/libz.so ] && [ ! -e /usr/lib64/libz.so ]; then
     ln -sf libz.so.1 /usr/lib64/libz.so
     echo "Fixed: libz.so -> libz.so.1"
 fi
+
