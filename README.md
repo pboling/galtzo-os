@@ -44,7 +44,7 @@ This particular configuration layers the following onto `aurora-dx-hwe`:
   - autoconf
   - gcc
   - gcc-c++ (necessary for Ruby < 3.1)
-  - rust
+  - rust # for oxide-rb, magnus, tree_stump & other crabby things
   - patch
   - make
   - bzip2
@@ -57,7 +57,6 @@ This particular configuration layers the following onto `aurora-dx-hwe`:
   - ncurses-devel
   - perl-FindBin # Because of OpenSSL!
   - java-25 # for JRuby!
-  - rust # for oxide-rb, magnus, tree_stump & other crabby things
 
 ## Installation
 
