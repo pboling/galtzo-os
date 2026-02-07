@@ -1,6 +1,6 @@
 # galtzo-os &nbsp; [![bluebuild build badge](https://github.com/pboling/galtzo-os/actions/workflows/build.yml/badge.svg)](https://github.com/pboling/galtzo-os/actions/workflows/build.yml)
 
-This image is based on `aurora-dx-hwe:latest`.  A new version / build is released daily.
+This image is based on `bazzite-dx:latest`.  A new version / build is released daily.
 
 The linux lineage of this spin therefore looks something like this:
 
@@ -12,11 +12,8 @@ mindmap
         Fedora Silverblue
           Universal Blue
             Bazzite
-            Bluefin
-              Aurora
-                Aurora-DX
-                  Aurora-DX-HWE
-                    Galtzo
+              Bazzite-DX
+                Galtzo-OS
                   
     Debian
       Ubuntu
@@ -28,7 +25,7 @@ mindmap
       Gentoo
     Arch
 ```
-NOTE: `HWE` images are tailored for a few hardware platforms, including ASUS laptops.  They also differ from other aurora builds in that they use the bazzite kernel.  The `DX` means the "Developer Experience" flavor.
+NOTE: The `DX` means the "Developer Experience" flavor.
 
 If you are unfamiliar with Universal Blue Linux, or Atomic Fedora,
 start your journey at [universal-blue.org](https://universal-blue.org/), and download an image that suits you.
@@ -59,6 +56,8 @@ This particular configuration layers the following onto `aurora-dx-hwe`:
   - gdbm-devel
   - ncurses-devel
   - perl-FindBin # Because of OpenSSL!
+  - java-25 # for JRuby!
+  - rust # for oxide-rb, magnus, tree_stump & other crabby things
 
 ## Installation
 
@@ -100,7 +99,7 @@ Generally there won't be more than one build per day, so a daily reboot will kee
 
 ## ISO
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+You can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
 
 ## Verification
 
