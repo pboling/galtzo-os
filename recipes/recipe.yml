@@ -3,10 +3,10 @@
 # image is published to ghcr.io/pboling/galtzo-os
 name: galtzo-os
 # description will be included in the image's metadata
-description: Aurora DX (HWE) with NordVPN, 1Password, and other tweaks
+description: Aurora DX (beta) with NordVPN, 1Password, asus-linux, and other tweaks
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-dx
+base-image: ghcr.io/ublue-os/aurora-dx:beta
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -20,7 +20,6 @@ modules:
   - type: rpm-ostree
     repos:
       # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-      - nordvpn.repo
       - 1password.repo
       - asus-linux.repo
       - ghostty.repo
