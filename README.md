@@ -1,6 +1,6 @@
 # galtzo-os &nbsp; [![bluebuild build badge](https://github.com/pboling/galtzo-os/actions/workflows/build.yml/badge.svg)](https://github.com/pboling/galtzo-os/actions/workflows/build.yml)
 
-This image is based on `bazzite-dx:latest`.  A new version / build is released daily.
+This image is based on `aurora-dx:beta`. A new version / build is released daily.
 
 The linux lineage of this spin therefore looks something like this:
 
@@ -11,10 +11,10 @@ mindmap
       Fedora CoreOS
         Fedora Silverblue
           Universal Blue
-            Bazzite
-              Bazzite-DX
+            Aurora
+              Aurora-DX
                 Galtzo-OS
-                  
+
     Debian
       Ubuntu
     SLS
@@ -25,6 +25,7 @@ mindmap
       Gentoo
     Arch
 ```
+
 NOTE: The `DX` means the "Developer Experience" flavor.
 
 If you are unfamiliar with Universal Blue Linux, or Atomic Fedora,
@@ -57,11 +58,15 @@ This particular configuration layers the following onto `aurora-dx-hwe`:
   - ncurses-devel
   - perl-FindBin # Because of OpenSSL!
   - java-25 # for JRuby!
+  - snapper
+  - asusctl
+  - asusctl-rog-gui
+  - ghostty
 
 ## Installation
 
 | ⚠️ **Warning**️ | [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion. |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 
 To rebase an existing atomic Fedora installation to the latest build:
 
