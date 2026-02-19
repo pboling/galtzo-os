@@ -1,6 +1,6 @@
 # galtzo-os &nbsp; [![bluebuild build badge](https://github.com/pboling/galtzo-os/actions/workflows/build.yml/badge.svg)](https://github.com/pboling/galtzo-os/actions/workflows/build.yml)
 
-This image is based on `aurora-dx:beta`. A new version / build is released daily.
+This image is based on `aurora-dx:stable-daily`. A new version / build is released daily.
 
 The linux lineage of this spin therefore looks something like this:
 

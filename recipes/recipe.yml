@@ -3,11 +3,11 @@
 # image is published to ghcr.io/pboling/galtzo-os
 name: galtzo-os
 # description will be included in the image's metadata
-description: Aurora DX (beta) with NordVPN, 1Password, asus-linux, and other tweaks
+description: Aurora DX (stable-daily) with NordVPN, 1Password, asus-linux, and other tweaks
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/aurora-dx
-image-version: beta # latest is also supported if you want new, but stable, updates ASAP
+image-version: stable-daily # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
