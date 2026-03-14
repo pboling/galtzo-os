@@ -1,4 +1,4 @@
-# galtzo-os &nbsp; [![bluebuild build badge](https://github.com/pboling/galtzo-os/actions/workflows/build.yml/badge.svg)](https://github.com/pboling/galtzo-os/actions/workflows/build.yml)
+# 💿️ galtzo-os 💿️ &nbsp; [![bluebuild build badge](https://github.com/pboling/galtzo-os/actions/workflows/build.yml/badge.svg)](https://github.com/pboling/galtzo-os/actions/workflows/build.yml)
 
 This image is based on `aurora-dx:stable-daily`. A new version / build is released daily.
 
@@ -37,7 +37,7 @@ a web tool that will create a repo like this one and build your first image.
 
 Or see the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick manual setup instructions.
 
-This particular configuration layers the following onto `aurora-dx-hwe`:
+This particular configuration layers the following onto `aurora-dx`:
 
 - NordVPN (also added to systemd) (config taken from [jlandahl/aurora](https://github.com/jlandahl/aurora))
 - 1Password
@@ -62,6 +62,9 @@ This particular configuration layers the following onto `aurora-dx-hwe`:
   - asusctl
   - asusctl-rog-gui
   - ghostty
+  - earlyoom (Configured to protect JetBrains IDEs from being killed by System OOM assassin)
+
+It also configures the size of local swap memory (zram) to equal the size of RAM on the system.
 
 ## Installation
 

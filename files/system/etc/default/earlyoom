@@ -1,0 +1,2 @@
+# Options to pass to earlyoom
+EARLYOOM_ARGS="-m 5 -r 60 --avoid '(?i)(jetbrains|rubymine|webstorm|goland|rustrover|idea|pycharm)'"

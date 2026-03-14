@@ -59,6 +59,8 @@ modules:
       - asusctl-rog-gui
       # Terminal
       - ghostty
+      # Memory management
+      - earlyoom
 
   - type: script
     scripts:
