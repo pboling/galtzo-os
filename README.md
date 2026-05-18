@@ -52,6 +52,7 @@ This particular configuration layers the following onto `aurora-dx`:
   - openssl-devel
   - libyaml-devel
   - libffi-devel
+  - libicu-devel
   - zlib-ng-compat-devel
   - readline-devel
   - gdbm-devel

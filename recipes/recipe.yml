@@ -43,6 +43,7 @@ modules:
       - openssl-devel
       - libyaml-devel
       - libffi-devel
+      - libicu-devel
       - readline-devel
       - gdbm-devel
       - ncurses-devel
