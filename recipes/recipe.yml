@@ -53,6 +53,7 @@ modules:
       # Necessary for Quality of Life
       - nordvpn
       - 1password
+      - 1password-cli
       # CLI to manage filesystem snapshots, primarily for Btrfs and LVM with ext4
       - snapper
       # For ASUS laptops, to manage fan profiles and other hardware features

@@ -41,6 +41,7 @@ This particular configuration layers the following onto `aurora-dx`:
 
 - NordVPN (also added to systemd) (config taken from [jlandahl/aurora](https://github.com/jlandahl/aurora))
 - 1Password
+- 1Password CLI (`op`)
 - Ruby build dependencies (fedora specific)
   - autoconf
   - gcc
