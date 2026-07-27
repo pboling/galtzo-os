@@ -17,52 +17,52 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-      - 1password.repo
-      - asus-linux.repo
-      - ghostty.repo
-      - nordvpn.repo
-    optfix:
-      - 1Password
+      files:
+        # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+        - 1password.repo
+        - asus-linux.repo
+        - ghostty.repo
+        - nordvpn.repo
     install:
-      - micro
-      # NOTE: starship should be installed via brew install starship,
-      #       since the rpm-ostree module is not maintained
-      # - starship
-      # Necessary to install Ruby
-      # See: https://github.com/rbenv/ruby-build/wiki#fedora
-      - autoconf
-      - gcc
-      - gcc-c++
-      - rust
-      - patch
-      - make
-      - bzip2
-      - openssl-devel
-      - libyaml-devel
-      - libffi-devel
-      - libicu-devel
-      - readline-devel
-      - gdbm-devel
-      - ncurses-devel
-      - perl-FindBin # Because of OpenSSL!
-      # Necessary for JRuby & dynamodb-local
-      - java-25-openjdk-devel
-      # Necessary for Quality of Life
-      - nordvpn
-      - 1password
-      - 1password-cli
-      # CLI to manage filesystem snapshots, primarily for Btrfs and LVM with ext4
-      - snapper
-      # For ASUS laptops, to manage fan profiles and other hardware features
-      - asusctl
-      - asusctl-rog-gui
-      # Terminal
-      - ghostty
-      # Memory management
-      - earlyoom
+      packages:
+        - micro
+        # NOTE: starship should be installed via brew install starship,
+        #       since the rpm module package is not maintained
+        # - starship
+        # Necessary to install Ruby
+        # See: https://github.com/rbenv/ruby-build/wiki#fedora
+        - autoconf
+        - gcc
+        - gcc-c++
+        - rust
+        - patch
+        - make
+        - bzip2
+        - openssl-devel
+        - libyaml-devel
+        - libffi-devel
+        - libicu-devel
+        - readline-devel
+        - gdbm-devel
+        - ncurses-devel
+        - perl-FindBin # Because of OpenSSL!
+        # Necessary for JRuby & dynamodb-local
+        - java-25-openjdk-devel
+        # Necessary for Quality of Life
+        - nordvpn
+        - 1password
+        - 1password-cli
+        # CLI to manage filesystem snapshots, primarily for Btrfs and LVM with ext4
+        - snapper
+        # For ASUS laptops, to manage fan profiles and other hardware features
+        - asusctl
+        - asusctl-rog-gui
+        # Terminal
+        - ghostty
+        # Memory management
+        - earlyoom
 
   - type: script
     scripts:

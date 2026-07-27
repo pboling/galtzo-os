@@ -1,4 +1,5 @@
 cosign.key
 cosign.private
 /Containerfile
+.bluebuild-scripts_*
 .idea/
