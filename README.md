@@ -65,6 +65,10 @@ This particular configuration layers the following onto `aurora-dx`:
   - asusctl-rog-gui
   - ghostty
   - earlyoom (Configured to protect JetBrains IDEs from being killed by System OOM assassin)
+- Virtual Machine Manager Dependencies
+  - qemu-kvm
+  - libvirt
+  - virt-install
 
 It also configures the size of local swap memory (zram) to equal the size of RAM on the system.
 

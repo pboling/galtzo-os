@@ -67,6 +67,10 @@ modules:
         - ghostty
         # Memory management
         - earlyoom
+        # Virtual Machine Manager HyperVisor Deps
+        - qemu-kvm
+        - libvirt
+        - virt-install
 
   - type: script
     scripts:
