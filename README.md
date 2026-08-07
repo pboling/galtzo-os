@@ -68,7 +68,22 @@ This particular configuration layers the following onto `aurora-dx`:
 - Virtual Machine Manager Dependencies
   - qemu-kvm
   - libvirt
+  - libvirt-daemon-kvm
+  - libvirt-daemon-config-network
+  - virt-manager
   - virt-install
+  - virt-viewer
+
+Virtual Machine Manager is configured to show both local libvirt connections:
+
+- `qemu:///session` for user-owned VMs such as `imac-mint-vacation` and
+  `mint-home-vacation`
+- `qemu:///system` for shared system-managed VMs
+
+Both connections are configured to autoconnect, so launching Virtual Machine
+Manager from the desktop should show VMs from both inventories. Libvirt keeps
+these inventories separate; a VM defined on one connection does not appear on
+the other.
 
 It also configures the size of local swap memory (zram) to equal the size of RAM on the system.
 

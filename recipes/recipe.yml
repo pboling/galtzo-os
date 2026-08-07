@@ -70,17 +70,25 @@ modules:
         # Virtual Machine Manager HyperVisor Deps
         - qemu-kvm
         - libvirt
+        - libvirt-daemon-kvm
+        - libvirt-daemon-config-network
+        - virt-manager
         - virt-install
+        - virt-viewer
 
   - type: script
     scripts:
       - fix-zlib-symlink.sh
+      - configure-virt-manager.sh
 
   - type: systemd
     system:
       enabled:
         - galtzo-1password-groups
         - nordvpnd
+        # Keep the local QEMU/libvirt system connection available. The
+        # per-user session socket is socket-activated by libvirt when used.
+        - virtqemud.socket
 
   - type: default-flatpaks
     configurations:
