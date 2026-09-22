@@ -63,6 +63,8 @@ modules:
         # For ASUS laptops, to manage fan profiles and other hardware features
         - asusctl
         - asusctl-rog-gui
+        # Intel NPU driver for AI acceleration
+        - intel-npu-driver
         # Terminal
         - ghostty
         # Memory management
