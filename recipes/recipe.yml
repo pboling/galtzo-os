@@ -60,6 +60,8 @@ modules:
         - 1password-cli
         # CLI to manage filesystem snapshots, primarily for Btrfs and LVM with ext4
         - snapper
+        # PTY helper at /usr/bin/script, required by Cloudroom's Claude Code cloud sign-in
+        - util-linux-script
         # For ASUS laptops, to manage fan profiles and other hardware features
         - asusctl
         - asusctl-rog-gui
