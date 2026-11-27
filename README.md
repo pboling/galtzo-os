@@ -59,10 +59,15 @@ This particular configuration layers the following onto `aurora-dx`:
   - gdbm-devel
   - ncurses-devel
   - perl-FindBin # Because of OpenSSL!
+  - libcurl-devel
+  - libxml2-devel
+  - libxslt-devel
   - java-25 # for JRuby!
   - snapper
   - asusctl
   - asusctl-rog-gui
+  - coolercontrol (with `coolercontrold` systemd service enabled)
+  - liquidctl
   - ghostty
   - earlyoom (Configured to protect JetBrains IDEs from being killed by System OOM assassin)
 - Virtual Machine Manager Dependencies
