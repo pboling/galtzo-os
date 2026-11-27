@@ -92,6 +92,7 @@ modules:
     scripts:
       - fix-zlib-symlink.sh
       - configure-virt-manager.sh
+      - install-owly.sh
 
   - type: systemd
     system:

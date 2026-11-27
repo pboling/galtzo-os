@@ -68,6 +68,7 @@ This particular configuration layers the following onto `aurora-dx`:
   - asusctl-rog-gui
   - coolercontrol (with `coolercontrold` systemd service enabled)
   - liquidctl
+  - owly (AirDrop/AWDL over Linux Wi-Fi, latest RPM from [t4t5/owly](https://github.com/t4t5/owly))
   - ghostty
   - earlyoom (Configured to protect JetBrains IDEs from being killed by System OOM assassin)
 - Virtual Machine Manager Dependencies
